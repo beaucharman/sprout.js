@@ -101,7 +101,10 @@
 			$(window).bind('resize', function () {
 		
 				// ...and then again on window resize.
-				timer && clearTimeout(timer);
+				if(timer) {
+					clearTimeout(timer);
+				}
+				
 				timer = setTimeout(equalHeight, settings.responsiveDelay);
 			});
 		}
